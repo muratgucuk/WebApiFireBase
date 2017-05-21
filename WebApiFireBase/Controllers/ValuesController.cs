@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebApiFireBase.Models;
 
 namespace WebApiFireBase.Controllers
 {
@@ -22,8 +23,15 @@ namespace WebApiFireBase.Controllers
         {
 
             var firebase = new FirebaseClient("https://irrigation-9f0e2.firebaseio.com/");
-            var humi = await firebase
-               .Child("irrigation")
+            var humi = firebase;               
+
+            for (int i = 0; i < 2; i++)
+            {
+                firebase.Child("irrigation");
+            }
+
+            await firebase
+            .Child("irrigation")
                .PostAsync(new humiditydata
                {
                    data = "test",
@@ -31,14 +39,14 @@ namespace WebApiFireBase.Controllers
                });
 
             await firebase
-  .Child("irrigation")
-  .Child("humiditydata")
-  .Child("02")
-  .PutAsync(new humiditydata
-  {
-      data = "test",
-      status = "true"
-  });
+                .Child("irrigation")
+                .Child("humiditydata")
+                .Child("02")
+                .PutAsync(new humiditydata
+                {
+                    data = "test",
+                    status = "true"
+                });
 
 
 
@@ -62,9 +70,5 @@ namespace WebApiFireBase.Controllers
         }
     }
 
-    public class humiditydata
-    {
-        public string data { get; set; }
-        public string status { get; set; }
-    }
+    
 }

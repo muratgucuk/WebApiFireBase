@@ -1,0 +1,59 @@
+﻿using Firebase.Database;
+using Firebase.Database.Query;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Web;
+using WebApiFireBase.Firebase;
+using WebApiFireBase.Models;
+
+namespace WebApiFireBase.Firebase
+{
+    public class Irrigation : IFirebase
+    {
+        private FirebaseClient _firebase = null;
+        private string _url;
+
+        public string Url
+        {
+            get { return _url; }
+            set { _url = value; }
+        }
+
+        public Irrigation(string url)
+        {
+            this._url = url;
+            _firebase = new FirebaseClient(Url);
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async void Post(string data, string status)
+        {
+            var humi = await _firebase
+               .Child("irrigation")
+               .PostAsync(new humiditydata
+               {
+                   data = data,
+                   status = status
+               });
+        }
+
+        public void Put(string child1, string child2, string child3, string data, string status)
+        {
+            _firebase
+              .Child(child1)
+              .Child(child2)
+              .Child(child3)
+              .PutAsync(new humiditydata
+              {
+                  data = data,
+                  status = status
+              });
+        }
+    }
+}

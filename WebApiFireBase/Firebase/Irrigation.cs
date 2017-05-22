@@ -27,14 +27,18 @@ namespace WebApiFireBase.Firebase
             _firebase = new FirebaseClient(Url);
         }
 
-        public void Delete()
+        public async void Delete(string child1, string child2, string child3)
         {
-            throw new NotImplementedException();
+            await _firebase
+                .Child(child1)
+                .Child(child2)
+                .Child(child3)
+                .DeleteAsync();
         }
 
         public async void Post(string data, string status)
         {
-            var humi = await _firebase
+            await _firebase
                .Child("irrigation")
                .PostAsync(new humiditydata
                {
@@ -43,9 +47,9 @@ namespace WebApiFireBase.Firebase
                });
         }
 
-        public void Put(string child1, string child2, string child3, string data, string status)
+        public async void Put(string child1, string child2, string child3, string data, string status)
         {
-            _firebase
+            await _firebase
               .Child(child1)
               .Child(child2)
               .Child(child3)

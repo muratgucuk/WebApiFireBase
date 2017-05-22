@@ -23,33 +23,36 @@ namespace WebApiFireBase.Controllers
         {
 
             var firebase = new FirebaseClient("https://irrigation-9f0e2.firebaseio.com/");
-            var humi = firebase;               
+            //var humi = firebase;               
 
-            for (int i = 0; i < 2; i++)
-            {
-                firebase.Child("irrigation");
-            }
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    firebase.Child("irrigation");
+            //}
 
-            await firebase
-            .Child("irrigation")
-               .PostAsync(new humiditydata
-               {
-                   data = "test",
-                   status = "true"
-               });
+            //await firebase
+            //.Child("irrigation")
+            //   .PostAsync(new humiditydata
+            //   {
+            //       data = "test",
+            //       status = "true"
+            //   });
 
             await firebase
                 .Child("irrigation")
                 .Child("humiditydata")
-                .Child("02")
+                .Child("03")
                 .PutAsync(new humiditydata
                 {
                     data = "test",
                     status = "true"
                 });
 
-
-
+            await firebase
+                .Child("irrigation")
+                .Child("humiditydata")
+                .Child("02")
+                .DeleteAsync();
 
             return "value";
         }

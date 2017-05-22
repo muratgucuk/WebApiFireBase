@@ -63,6 +63,5 @@ C:\Users\TR\Documents\GitHub\WebApiFireBase\WebApiFireBase\bin\System.Web.WebPag
 C:\Users\TR\Documents\GitHub\WebApiFireBase\WebApiFireBase\bin\System.Web.WebPages.Deployment.xml
 C:\Users\TR\Documents\GitHub\WebApiFireBase\WebApiFireBase\bin\System.Web.WebPages.Razor.xml
 C:\Users\TR\Documents\GitHub\WebApiFireBase\WebApiFireBase\bin\Antlr3.Runtime.pdb
-C:\Users\TR\Documents\GitHub\WebApiFireBase\WebApiFireBase\obj\Debug\WebApiFireBase.csprojResolveAssemblyReference.cache
 C:\Users\TR\Documents\GitHub\WebApiFireBase\WebApiFireBase\obj\Debug\WebApiFireBase.dll
 C:\Users\TR\Documents\GitHub\WebApiFireBase\WebApiFireBase\obj\Debug\WebApiFireBase.pdb

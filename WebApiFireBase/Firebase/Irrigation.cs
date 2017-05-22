@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Web;
 using WebApiFireBase.Firebase;
 using WebApiFireBase.Models;
@@ -35,6 +36,7 @@ namespace WebApiFireBase.Firebase
 
         public async void Delete(string child1, string child2, string child3)
         {
+            _firebase = new FirebaseClient(Url);
             await _firebase
                 .Child(child1)
                 .Child(child2)
@@ -53,7 +55,7 @@ namespace WebApiFireBase.Firebase
                });
         }
 
-        public async void Put(string child1, string child2, string child3, string data, string status)
+        public async Task Put(string child1, string child2, string child3, string data, string status)
         {
             await _firebase
               .Child(child1)

@@ -207,7 +207,6 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IrrigationController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Firebase\IFirebase.cs" />
     <Compile Include="Firebase\Irrigation.cs" />
     <Compile Include="Global.asax.cs">

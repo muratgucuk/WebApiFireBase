@@ -208,12 +208,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IrrigationController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Firebase\Interface.cs" />
+    <Compile Include="Firebase\IFirebase.cs" />
     <Compile Include="Firebase\Irrigation.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\humiditydata.cs" />
+    <Compile Include="Models\Children.cs" />
+    <Compile Include="Models\HumidityData.cs" />
+    <Compile Include="Models\PutHumidityData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

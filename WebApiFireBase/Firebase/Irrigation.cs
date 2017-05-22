@@ -21,9 +21,15 @@ namespace WebApiFireBase.Firebase
             set { _url = value; }
         }
 
+        public Irrigation()
+        {
+            this.Url = "https://irrigation-9f0e2.firebaseio.com/";
+            _firebase = new FirebaseClient(Url);
+        }
+
         public Irrigation(string url)
         {
-            this._url = url;
+            this.Url = url;
             _firebase = new FirebaseClient(Url);
         }
 
@@ -40,7 +46,7 @@ namespace WebApiFireBase.Firebase
         {
             await _firebase
                .Child("irrigation")
-               .PostAsync(new humiditydata
+               .PostAsync(new HumidityData
                {
                    data = data,
                    status = status
@@ -53,7 +59,7 @@ namespace WebApiFireBase.Firebase
               .Child(child1)
               .Child(child2)
               .Child(child3)
-              .PutAsync(new humiditydata
+              .PutAsync(new HumidityData
               {
                   data = data,
                   status = status

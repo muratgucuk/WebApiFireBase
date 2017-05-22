@@ -5,9 +5,9 @@ using System.Web;
 
 namespace WebApiFireBase.Models
 {
-    public class HumidityData
+    public class PutHumidityData
     {
-        public string data { get; set; }
-        public string status { get; set; }
+        public Children children { get; set; }
+        public HumidityData humidity { get; set; }
     }
 }

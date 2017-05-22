@@ -42,7 +42,7 @@ namespace WebApiFireBase.Controllers
                 .Child("irrigation")
                 .Child("humiditydata")
                 .Child("03")
-                .PutAsync(new humiditydata
+                .PutAsync(new HumidityData
                 {
                     data = "test",
                     status = "true"

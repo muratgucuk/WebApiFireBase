@@ -55,7 +55,7 @@ namespace WebApiFireBase.Firebase
                });
         }
 
-        public async Task Put(string child1, string child2, string child3, string data, string status)
+        public async void Put(string child1, string child2, string child3, string data, string status)
         {
             await _firebase
               .Child(child1)

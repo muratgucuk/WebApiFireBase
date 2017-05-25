@@ -34,6 +34,11 @@ namespace WebApiFireBase.Firebase
             _firebase = new FirebaseClient(Url);
         }
 
+        public Irrigation(FirebaseClient client)
+        {
+            _firebase = client;
+        }
+
         public async void Delete(string child1, string child2, string child3)
         {
             _firebase = new FirebaseClient(Url);
